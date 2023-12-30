@@ -41,21 +41,19 @@ function App() {
 
   return (
     <>
-      <div className="container w-full min-h-screen justify-center bg-base-100 text-lg">
-        <div className="flex flex-col max-w-lg p-4 mx-auto">
-          <span className="label-text p-2 text-md">
-            یک مصراع را به فینگلیش وارد کنید.
-            <div className='inline float-left'>
-              دقیق
-              <input type="checkbox" className="toggle align-middle mx-2" onClick={(event) => toggle_exact_fuzzy(event.currentTarget.checked)} />
-              فازی
-            </div>
-          </span>
-          <textarea dir="ltr" rows={2} spellCheck="false" placeholder='…' className="textarea textarea-bordered resize-none text-lg" onChange={(event) => { setInput(event.target.value); vaznha(event.target.value).then((val) => setOutput(val)); }}></textarea>
-          <div dir="ltr" className="w-full p-2 justify-center font-mono text-4xl">{heja_to_unicode(heja(input))}</div>
-          <p className="my-8">{display_vaznha(output)}</p>
-        </div>
-      </div >
+      <div className="flex flex-col max-w-lg p-4 mx-auto">
+        <span className="label-text p-2 text-md">
+          یک مصراع را به فینگلیش وارد کنید.
+          <div className='inline float-left'>
+            دقیق
+            <input type="checkbox" className="toggle align-middle mx-2" onClick={(event) => toggle_exact_fuzzy(event.currentTarget.checked)} />
+            فازی
+          </div>
+        </span>
+        <textarea dir="ltr" rows={2} spellCheck="false" placeholder='…' className="textarea textarea-bordered resize-none text-lg" onChange={(event) => { setInput(event.target.value); vaznha(event.target.value).then((val) => setOutput(val)); }}></textarea>
+        <div dir="ltr" className="w-full p-2 justify-center font-mono text-4xl">{heja_to_unicode(heja(input))}</div>
+        <p className="my-8">{display_vaznha(output)}</p>
+      </div>
     </>
   );
 }
