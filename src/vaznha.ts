@@ -13,7 +13,7 @@ export function set_fuzzy_matcher(threshold: number) {
 }
 
 export async function vaznha(input: string): Promise<string[]> {
-  const input_heja = heja_special(input.toLowerCase().replace(/[^\s\w]/g, ""));
+  const input_heja = heja_special(input.toLowerCase().replace(/[^a-z' ]/g, ""));
   const vznha: string[] = [];
   for (let key_vazn in VAZNHA) {
     const vazn_variants = VAZNHA[key_vazn];
