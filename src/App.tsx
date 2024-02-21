@@ -72,7 +72,7 @@ function App() {
               <ul className="flex flex-col gap-3 justify-center text-center ">
                 <li>بر کفی جام شریعت بر کفی سندان عشق <br />bar kafi jaamee shari'at bar kafi sendaane eshgh</li>
                 <li>هر که اقرار کرد و باده شناخت<br />har ke eghraar kard o baade shenaakht</li>
-                <li>سنبل سیه بر سمن مزن<br />sonbole siyah bar saman mazan</li>
+                <li>سنبل سیه بر سمن مزن<br />sonbolee siyah bar saman mazan</li>
               </ul>
               <div className="modal-action">
                 <form method="dialog">
