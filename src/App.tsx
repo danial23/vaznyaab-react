@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { vaznha, heja, set_exact_matcher, set_fuzzy_matcher } from './vaznha.ts'
+import './index.css'
 
 function App() {
   const [input, setInput] = useState('');
@@ -44,7 +45,7 @@ function App() {
       <div lang="fa" dir="rtl" className="flex flex-col max-w-lg p-4 mx-auto">
         <span className="label-text p-2 text-md">
           یک مصراع را به فینگلیش وارد کنید.
-          <button tabIndex={2} className="badge badge-outline mx-2" onClick={() => (document.getElementById("help_modal") as HTMLDialogElement).showModal()}>چگونه؟</button>
+          <button tabIndex={2} className="badge badge-outline border-base-content mx-2" onClick={() => (document.getElementById("help_modal") as HTMLDialogElement).showModal()}>چگونه؟</button>
           <dialog tabIndex={-1} id="help_modal" className="modal modal-bottom sm:modal-middle">
             <div className="modal-box">
               <h3 className="text-lg -mt-2 mb-4">توضیحات</h3>
@@ -90,7 +91,7 @@ function App() {
             فازی
           </div>
         </span>
-        <textarea tabIndex={1} dir="ltr" rows={2} spellCheck="false" autoCorrect='false' autoCapitalize='false' autoComplete='false' placeholder='…' className="textarea textarea-bordered resize-none text-lg" onChange={(event) => { const s = event.target.value.toLowerCase(); setInput(s); vaznha(s).then((val) => setOutput(val)); }}></textarea>
+        <textarea tabIndex={1} dir="ltr" rows={2} spellCheck="false" autoCorrect='false' autoCapitalize='false' autoComplete='false' placeholder='…' className="textarea textarea-bordered resize-none text-lg w-full" onChange={(event) => { const s = event.target.value.toLowerCase(); setInput(s); vaznha(s).then((val) => setOutput(val)); }}></textarea>
         <div dir="ltr" className="w-full p-2 justify-center font-mono text-4xl">{heja_to_unicode(heja(input))}</div>
         <p className="my-8">{display_vaznha(output)}</p>
       </div >
